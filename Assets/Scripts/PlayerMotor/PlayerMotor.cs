@@ -1,0 +1,22 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.AI;
+
+[RequireComponent(typeof(NavMeshAgent))]
+public class PlayerMotor : MonoBehaviour
+{
+    NavMeshAgent agent;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        
+    }
+
+    public void MoveToPoint (Vector3 point)
+    {
+        agent.SetDestination(point);
+    }
+}
